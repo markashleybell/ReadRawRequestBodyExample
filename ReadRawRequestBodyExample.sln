@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadRawRequestBodyExample", "ReadRawRequestBodyExample.csproj", "{97FAB8A7-2F2D-4550-A6A1-9721898C3CC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97FAB8A7-2F2D-4550-A6A1-9721898C3CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FAB8A7-2F2D-4550-A6A1-9721898C3CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FAB8A7-2F2D-4550-A6A1-9721898C3CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FAB8A7-2F2D-4550-A6A1-9721898C3CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7CD8C16-D164-4478-AE4B-8F7C4FEE400C}
+	EndGlobalSection
+EndGlobal

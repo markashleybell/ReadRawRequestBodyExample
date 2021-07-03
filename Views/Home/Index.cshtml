@@ -1,0 +1,21 @@
+﻿@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>ReadRawRequestBodyExample</h1>
+
+<h2>POST to endpoint with no view model (no model binding before body read)</h2>
+
+<form asp-action="NoModelBinding" asp-controller="Home" method="post">
+    <input type="text" asp-for="Email" value="test@test.com"/>
+    <button type="submit">Submit</button>
+</form>
+
+<h2>POST to endpoint with view model (model binding occurs before body read)</h2>
+
+<form asp-action="WithModelBinding" asp-controller="Home" method="post">
+    <input type="text" asp-for="Email" value="test@test.com" />
+    <button type="submit">Submit</button>
+</form>
