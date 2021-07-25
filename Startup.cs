@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,8 +11,12 @@ namespace ReadRawRequestBodyExample
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services) =>
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddRouting(options => options.LowercaseUrls = true);
+
             services.AddControllersWithViews();
+        }
 
         public void Configure(IApplicationBuilder app)
         {
@@ -32,9 +35,18 @@ namespace ReadRawRequestBodyExample
                 return next(context);
             });
 
-            But encapsulating it in its own class is better.
-            */
+            But encapsulating it in its own class is better:
+
             app.UseMiddleware<EnableRequestBodyBufferingMiddleware>();
+
+            And even better: only applying the middleware to the routes that
+            actually need it:
+            */
+
+            app.UseWhen(
+                ctx => ctx.Request.Path.StartsWithSegments("/home/withmodelbinding"),
+                ab => ab.UseMiddleware<EnableRequestBodyBufferingMiddleware>()
+            );
 
             app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
         }
